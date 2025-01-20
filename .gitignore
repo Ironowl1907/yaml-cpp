@@ -1,3 +1,5 @@
+bin/
+bin-int/
 build/
 /tags
 /bazel-*
