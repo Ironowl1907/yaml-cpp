@@ -2,8 +2,15 @@ project "yaml-cpp"
 kind("StaticLib")
 language("C++")
 
-targetDir("bin/" .. outputdir .. "/%(prj.name)")
-objDir("bin-int/" .. outputdir .. "/%(prj.name)")
+targetdir("bin/%{cfg.buildcfg}")
+objdir("bin-int/%{cfg.buildcfg}/zirconium")
+
+staticruntime("on")
+
+-- libdirs { "bin/%{cfg.buildcfg}" }
+
+-- defines {
+--     "YAML_CPP_STATIC_DEFINE" }
 
 files
 {
